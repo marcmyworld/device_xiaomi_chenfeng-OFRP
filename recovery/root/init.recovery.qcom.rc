@@ -8,13 +8,12 @@ on early-init
 
 on property:twrp.modules.loaded=true
     start vendor.health-recovery
-    start vendor.health-default
     start touch_report
 
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
 
-    wait /sys/kernel/boot_adsp/ssr
-    write /sys/kernel/boot_adsp/ssr 1
+    wait /sys/kernel/boot_adsp/boot
+    write /sys/kernel/boot_adsp/boot 1
 
     setprop twrp.firmware.mounted true
 
@@ -31,6 +30,7 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    mkdir /tmp/persist 0775 shell system
     mkdir /mnt/vendor 0775 shell system
     mkdir /mnt/vendor/persist 0775 shell system
     mount none /tmp/persist /mnt/vendor/persist bind rec
