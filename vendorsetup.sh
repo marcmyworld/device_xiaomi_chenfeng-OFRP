@@ -3,7 +3,7 @@
 # Copyright (C) 2025-2026 OrangeFox Recovery Project
 # SPDX-License-Identifier: GPL-3.0-only
 
-FDEVICE="onyx"
+FDEVICE="chenfeng"
 
 fox_get_target_device() {
     local chkdev=""
@@ -34,7 +34,7 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
   then
-    export TARGET_DEVICE_ALT="onyx"
+    export TARGET_DEVICE_ALT="chenfeng,chenfeng_in"
     export LC_ALL="C"
     export FOX_AB_DEVICE=1
     export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
@@ -59,7 +59,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
     export OF_ENABLE_LPTOOLS=1
     export OF_ENABLE_ALL_PARTITION_TOOLS=1
     export FOX_VIRTUAL_AB_DEVICE=1
-    export OF_DYNAMIC_FULL_SIZE=11811160064
+    export OF_DYNAMIC_FULL_SIZE=9126805504
     export OF_ENABLE_FS_COMPRESSION=1
     export OF_ENABLE_FRP_ADDON=1
     export OF_DISPLAY_FORMAT_FILESYSTEMS_DEBUG_INFO=1
@@ -79,12 +79,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
     export FOX_ENABLE_KERNELSU_NEXT_SUPPORT=1
     export FOX_ENABLE_SUKISU_SUPPORT=1
 
-    # For Xiaomi Onyx
-    export OF_MAINTAINER="UnmoveD"
-    export OF_SCREEN_H=2400
-    export OF_STATUS_H=116
-    export OF_STATUS_INDENT_LEFT=30
-    export OF_STATUS_INDENT_RIGHT=30
+    # For Xiaomi 14 Civi / Civi 4 Pro (chenfeng)
+    export OF_MAINTAINER="marcmyworld"
+    export OF_SCREEN_H=2750
+    export OF_STATUS_H=152
+    export OF_STATUS_INDENT_LEFT=48
+    export OF_STATUS_INDENT_RIGHT=48
+    export OF_CLOCK_POS=0
     export OF_HIDE_NOTCH=1
     export OF_ALLOW_DISABLE_NAVBAR=0
 
@@ -92,7 +93,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
     export USE_CCACHE=1
     export CCACHE_EXEC="/usr/bin/ccache"
     export CCACHE_MAXSIZE="50G"
-    export CCACHE_DIR="/mnt/ccache"
+    export CCACHE_DIR="/home/sharkey/.ccache"
 
     # Warn if CCACHE_DIR is an invalid directory
     if [ $USE_CCACHE = 1 ] && [ ! -d ${CCACHE_DIR} ];
@@ -102,8 +103,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
     fi
 
     export LC_ALL="C"
-    export BUILD_USERNAME=unmoved
-    export BUILD_HOSTNAME=github
+    export BUILD_USERNAME=marcmyworld
+    export BUILD_HOSTNAME=android-kitchen
 
   else
     if [ -z "$FOX_BUILD_DEVICE" ] && [ -z "$BASH_SOURCE" ] && [ -z "$ZSH_VERSION" ]; 
