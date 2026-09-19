@@ -28,15 +28,15 @@ ENABLE_CPUSETS   := true
 ENABLE_SCHEDBOOST := true
 
 # Bootloader
-PRODUCT_PLATFORM            := sun
-TARGET_BOOTLOADER_BOARD_NAME := $(PRODUCT_PLATFORM)
+PRODUCT_PLATFORM            := pineapple
+TARGET_BOOTLOADER_BOARD_NAME := chenfeng
 TARGET_NO_BOOTLOADER        := true
 TARGET_USES_UEFI            := true
 
 # Platform
-TARGET_BOARD_PLATFORM     := xiaomi_sm8750
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno830
-QCOM_BOARD_PLATFORMS      += xiaomi_sm8750
+TARGET_BOARD_PLATFORM     := pineapple
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno735
+QCOM_BOARD_PLATFORMS      += xiaomi_sm8635
 
 # Kernel
 TARGET_KERNEL_ARCH          := arm64
@@ -89,9 +89,9 @@ BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 
 # Dynamic Partition
-BOARD_SUPER_PARTITION_SIZE                      := 11811160064
+BOARD_SUPER_PARTITION_SIZE                      := 9126805504
 BOARD_SUPER_PARTITION_GROUPS                    := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE               := 11806965760
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE               := 9122611200
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST     := system system_ext product vendor vendor_dlkm odm
 
 # File systems
