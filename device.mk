@@ -19,9 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_wit
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Fix for CrashRecovery build error
-PRODUCT_APEX_SYSTEM_SERVER_JARS += com.android.crashrecovery:service-crashrecovery
-
 # Configure twrp config common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
 
