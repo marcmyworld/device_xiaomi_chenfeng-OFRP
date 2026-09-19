@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/onyx
+DEVICE_PATH := device/xiaomi/chenfeng
 
 # Building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true

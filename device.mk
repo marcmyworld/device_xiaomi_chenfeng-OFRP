@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/onyx
+DEVICE_PATH := device/xiaomi/chenfeng
 
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -35,9 +35,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
-
-BOARD_ROOT_EXTRA_SYMLINKS += \
-    /vendor/odm/firmware:/vendor/odm/firmware/o10u
 
 # Otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \

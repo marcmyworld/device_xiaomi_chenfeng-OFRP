@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_onyx.mk
+    $(LOCAL_DIR)/twrp_chenfeng.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_onyx-user \
-    twrp_onyx-userdebug \
-    twrp_onyx-eng
+    twrp_chenfeng-user \
+    twrp_chenfeng-userdebug \
+    twrp_chenfeng-eng
