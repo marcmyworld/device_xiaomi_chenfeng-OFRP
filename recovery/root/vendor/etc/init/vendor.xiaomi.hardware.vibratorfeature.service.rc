@@ -2,10 +2,16 @@
 # SPDX-License-Identifier: Apache-2.0
 
 on boot
+    wait /sys/bus/i2c/drivers/awinic_haptic/2-005a/f0_save 2
     chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/f0_save
     chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/osc_save
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/f0_value
     chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/custom_wave
+    chmod 0666 /sys/bus/i2c/drivers/awinic_haptic/2-005a/f0_save
+    chmod 0666 /sys/bus/i2c/drivers/awinic_haptic/2-005a/osc_save
+    chmod 0666 /sys/bus/i2c/drivers/awinic_haptic/2-005a/f0_value
     chmod 0666 /sys/bus/i2c/drivers/awinic_haptic/2-005a/custom_wave
+    chmod 0666 /dev/input/event*
 
     setprop vendor.haptic.calibrate.done 1
     start vibratorfeature-service
@@ -14,7 +20,7 @@ service vibratorfeature-service /system/bin/hw/vendor.xiaomi.hardware.vibratorfe
     class hal
     user root
     group root system input audio
-    setenv LD_LIBRARY_PATH /system/lib64/qti_vibrator:/system/lib64:/vendor/lib64:/vendor/lib64/hw:/sbin
+    setenv LD_LIBRARY_PATH /system/lib64/qti_vibrator:/odm/lib64:/vendor/odm/lib64:/system/lib64:/vendor/lib64:/vendor/lib64/hw:/sbin
     seclabel u:r:recovery:s0
     capabilities SYS_NICE
     priority -5
