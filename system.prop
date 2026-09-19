@@ -3,7 +3,7 @@ fbe.metadata.wrappedkey=true
 vendor.gatekeeper.disable_spu=true
 
 # Platform
-ro.board.platform=sun
+ro.board.platform=pineapple
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
@@ -20,8 +20,8 @@ ro.adb.secure=0
 # Vibrator
 ro.odm.mm.vibrator.device_type=ff
 ro.odm.mm.vibrator.resonant_frequency=170
-ro.odm.mm.vibrator.si_sys_path=/sys/bus/i2c/drivers/sih_haptic_688X/5-006b
 ro.odm.mm.vibrator.slide_effect_protect_time=20
+ro.odm.mm.vibrator.sys_path=/sys/bus/i2c/drivers/awinic_haptic/2-005a
 
 # USB
 vendor.usb.configfs=1

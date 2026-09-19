@@ -18,7 +18,7 @@ PRODUCT_DEVICE := chenfeng
 PRODUCT_NAME := twrp_chenfeng
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Xiaomi 14 Civi
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
 
 # Theme
 TW_STATUS_ICONS_ALIGN := center

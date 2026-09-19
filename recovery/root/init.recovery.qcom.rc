@@ -9,6 +9,7 @@ on early-init
 on property:twrp.modules.loaded=true
     start vendor.health-recovery
     start touch_report
+    start vibratorfeature-service
 
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
 
@@ -38,6 +39,7 @@ on fs
 
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    exec u:r:recovery:s0 root root -- /system/bin/fox_init.sh
 
 on boot
     setprop sys.usb.config adb

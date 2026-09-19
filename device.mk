@@ -22,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Configure twrp config common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit OrangeFox configuration
+$(call inherit-product, $(DEVICE_PATH)/fox_chenfeng.mk)
+
 # API
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34
