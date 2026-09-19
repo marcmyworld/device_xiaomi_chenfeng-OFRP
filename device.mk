@@ -40,3 +40,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
+
+PRODUCT_PACKAGES += \
+    prebuilt
