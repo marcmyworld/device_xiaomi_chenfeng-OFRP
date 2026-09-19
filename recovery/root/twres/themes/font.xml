@@ -38,5 +38,6 @@
 		<variable name="theme_sec_font" value="GoogleSans"/>
 		<variable name="theme_font_size" value="n"/>
 		<variable name="theme_font_weight" value="2"/>
+		<variable name="list_font" value="1"/>
 	</variables>
 </recovery>

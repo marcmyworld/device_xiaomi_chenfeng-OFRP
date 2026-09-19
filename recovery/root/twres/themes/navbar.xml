@@ -5,5 +5,6 @@
 		<variable name="navbar_disable_add" value="96"/>
 		<variable name="screen_h" value="%screen_original_h%+96"/>
 		<variable name="real_gestures_enable" value="1"/>
+		<variable name="list_font" value="1"/>
 	</variables>
 </recovery>
