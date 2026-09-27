@@ -58,12 +58,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
     export FOX_SETTINGS_ROOT_DIRECTORY=/persist
     export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
 
-    # CCACHE
-    export USE_CCACHE=1
-    export CCACHE_EXEC="/usr/bin/ccache"
-    export CCACHE_MAXSIZE="50G"
-    export CCACHE_DIR="/home/sharkey/.ccache"
-
     # Warn if CCACHE_DIR is an invalid directory
     if [ $USE_CCACHE = 1 ] && [ ! -d ${CCACHE_DIR} ];
      then
@@ -73,7 +67,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ];
 
     export LC_ALL="C"
     export BUILD_USERNAME=marcmyworld
-    export BUILD_HOSTNAME=android-kitchen
+    export BUILD_HOSTNAME=github
 
   else
     if [ -z "$FOX_BUILD_DEVICE" ] && [ -z "$BASH_SOURCE" ] && [ -z "$ZSH_VERSION" ]; 
